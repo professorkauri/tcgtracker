@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
 const input = process.argv[2];
@@ -120,19 +120,97 @@ const alolaSplit = alolaForms.findIndex(form => form.id.startsWith('minior-'));
 formsByName.set('Alola Forms', alolaForms.slice(0, alolaSplit));
 formsByName.set('Alola Forms II', alolaForms.slice(alolaSplit));
 for (const [name, pokemon] of genderForms) formsByName.get(name).push(...pokemon);
+const excludedFormIds = new Set([
+  ...unownForms.map(form => form.id),
+  'deoxys-normal', 'deoxys-attack', 'deoxys-defense', 'deoxys-speed',
+  'burmy', 'burmy-sandy', 'burmy-trash',
+  'wormadam-plant', 'wormadam-sandy', 'wormadam-trash',
+  'shellos-west', 'shellos-east', 'gastrodon-west', 'gastrodon-east',
+  'hippopotas-male', 'hippopotas-female', 'hippowdon-male', 'hippowdon-female',
+  'rotom', 'shaymin-land',
+  'unfezant-male', 'unfezant-female',
+  'basculin-red-striped', 'basculin-blue-striped',
+  'deerling-spring', 'deerling-summer', 'deerling-autumn', 'deerling-winter',
+  'sawsbuck-spring', 'sawsbuck-summer', 'sawsbuck-autumn', 'sawsbuck-winter',
+  'frillish-male', 'frillish-female', 'jellicent-male', 'jellicent-female',
+  'tornadus-incarnate', 'thundurus-incarnate', 'landorus-incarnate', 'keldeo-ordinary',
+  'pyroar-male', 'pyroar-female', 'meowstic-male', 'meowstic-female',
+  'flabebe-red', 'flabebe-orange', 'flabebe-yellow', 'flabebe-white', 'flabebe-blue',
+  'floette-red', 'floette-orange', 'floette-yellow', 'floette-white', 'floette-blue',
+  'florges-red', 'florges-orange', 'florges-yellow', 'florges-white', 'florges-blue',
+  'furfrou-natural', 'furfrou-heart', 'furfrou-star', 'furfrou-diamond', 'furfrou-debutante',
+  'furfrou-matron', 'furfrou-dandy', 'furfrou-la-reine', 'furfrou-kabuki', 'furfrou-pharaoh',
+  'pumpkaboo-small', 'pumpkaboo-average', 'pumpkaboo-large', 'pumpkaboo-super',
+  'gourgeist-small', 'gourgeist-average', 'gourgeist-large', 'gourgeist-super',
+  ...vivillonForms.map(form => form.id),
+  'oricorio-baile', 'lycanroc-midday', 'wishiwashi-solo',
+  'minior-red-meteor', 'minior-red', 'minior-orange', 'minior-yellow',
+  'minior-green', 'minior-blue', 'minior-indigo', 'minior-violet',
+  'sinistea', 'sinistea-antique', 'polteageist', 'polteageist-antique',
+  'indeedee-male', 'indeedee-female', 'urshifu-single-strike',
+  'basculegion-male', 'enamorus-incarnate',
+  'maushold-family-of-four', 'maushold-family-of-three',
+  'squawkabilly-green-plumage', 'squawkabilly-blue-plumage',
+  'squawkabilly-yellow-plumage', 'squawkabilly-white-plumage',
+  'palafin-zero', 'tatsugiri-curly',
+  'dudunsparce-two-segment', 'dudunsparce-three-segment', 'gimmighoul',
+  'poltchageist', 'poltchageist-artisan', 'sinistcha', 'sinistcha-masterpiece'
+]);
+for (const [name, pokemon] of formsByName) {
+  formsByName.set(name, pokemon.filter(form => !excludedFormIds.has(form.id)));
+}
 for (const [name, pokemon] of formsByName) formsByName.set(name, sortByDex(pokemon));
 const formOrder = ['Unown Forms', 'Hoenn Forms', 'Sinnoh Forms', 'Unova Forms', 'Kalos Forms', 'Kalos Forms II', 'Vivillon Forms', 'Alola Forms', 'Alola Forms II', 'Galar Forms', 'Hisui Forms', 'Paldea Forms'];
 const forms = formOrder.filter(name => formsByName.has(name)).map(name => [name, formsByName.get(name)]);
 const boxes = [];
 for (let i=0;i<species.length;i+=30) boxes.push({id:`dex-${i+1}-${Math.min(i+30,species.length)}`,title:`${i+1}–${Math.min(i+30,species.length)}`,pokemon:species.slice(i,i+30)});
-const formIds = new Map([['Hoenn Forms','forms-3'],['Sinnoh Forms','forms-4'],['Unova Forms','forms-5'],['Kalos Forms','forms-6'],['Alola Forms','forms-7'],['Galar Forms','forms-8'],['Hisui Forms','forms-9'],['Paldea Forms','forms-10'],['Kalos Forms II','forms-11'],['Alola Forms II','forms-12'],['Unown Forms','forms-13'],['Vivillon Forms','forms-14']]);
-forms.forEach(([name,pokemon]) => boxes.push({id:formIds.get(name),title:name,pokemon}));
+const regionByFormGroup = new Map([
+  ['Unown Forms', 'Johto'], ['Hoenn Forms', 'Hoenn'], ['Sinnoh Forms', 'Sinnoh'],
+  ['Unova Forms', 'Unova'], ['Kalos Forms', 'Kalos'], ['Kalos Forms II', 'Kalos'],
+  ['Vivillon Forms', 'Kalos'], ['Alola Forms', 'Alola'], ['Alola Forms II', 'Alola'],
+  ['Galar Forms', 'Galar'], ['Hisui Forms', 'Hisui'], ['Paldea Forms', 'Paldea']
+]);
+const formPages = forms.flatMap(([name, pokemon]) => {
+  const region = regionByFormGroup.get(name);
+  if (!region) throw new Error(`Missing region for form group: ${name}`);
+  const pages = [];
+  for (let index = 0; index < pokemon.length; index += 9) {
+    pages.push({ region, type: 'Forms', pokemon: pokemon.slice(index, index + 9) });
+  }
+  return pages;
+});
+
+const imageFiles = await readdir('images/regular');
+const specialIds = imageFiles.map(file => file.replace(/\.png$/, '')).filter(id => /-(mega(?:-[xy])?|gmax)$/.test(id));
+const specialName = id => {
+  const mega = id.match(/^(.*)-mega(?:-([xy]))?$/);
+  if (mega) return `Mega ${title(mega[1])}${mega[2] ? ` ${mega[2].toUpperCase()}` : ''}`;
+  return `Gigantamax ${title(id.replace(/-gmax$/, ''))}`;
+};
+for (const [type, region] of [['Mega', 'Kalos'], ['Gmax', 'Galar']]) {
+  const suffix = type === 'Mega' ? /-mega(?:-[xy])?$/ : /-gmax$/;
+  const pokemon = sortByDex(specialIds.filter(id => suffix.test(id)).map(id => P(id, specialName(id))));
+  for (let index = 0; index < pokemon.length; index += 9) {
+    formPages.push({ region, type, pokemon: pokemon.slice(index, index + 9) });
+  }
+}
+
+const seenFormIds = new Set();
+for (const page of formPages) {
+  if (!page.region || !['Forms', 'Mega', 'Gmax'].includes(page.type) || !page.pokemon.length) {
+    throw new Error(`Invalid form page: ${JSON.stringify(page)}`);
+  }
+  for (const form of page.pokemon) {
+    if (seenFormIds.has(form.id)) throw new Error(`Duplicate form id: ${form.id}`);
+    seenFormIds.add(form.id);
+  }
+}
 const existingEvolutionLines = await readExistingEvolutionLines();
-const data = { boxes };
+const data = { boxes, formPages };
 if (existingEvolutionLines.length) data.evolutionLines = existingEvolutionLines;
 const output = JSON.stringify(data, null, 2).replace(
   /\{\n\s+"id": ([^\n]+),\n\s+"name": ([^\n]+),\n\s+"(dex|imageId)": ([^\n]+)\n\s+\}/g,
   '{ "id": $1, "name": $2, "$3": $4 }'
 );
 await writeFile('data/pokemon.js', `// Generated Pokémon and box definitions. Edit freely; keep box and form IDs stable once tracking.\nwindow.POKEMON_DATA = ${output};\n`);
-console.log(`Wrote ${boxes.length} boxes (${species.length} National Dex species + ${forms.reduce((n,f)=>n+f[1].length,0)} form slots).`);
+console.log(`Wrote ${boxes.length} boxes and ${formPages.length} form pages (${species.length} National Dex species + ${seenFormIds.size} forms).`);

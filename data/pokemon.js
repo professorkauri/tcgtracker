@@ -594,6 +594,7 @@ window.POKEMON_DATA = {
         { "id": "darkrai", "name": "Darkrai", "dex": 491 },
         { "id": "shaymin", "name": "Shaymin", "dex": 492 },
         { "id": "arceus", "name": "Arceus", "dex": 493 },
+        { "id": "victini", "name": "Victini", "dex": 494 },
         { "id": "snivy", "name": "Snivy", "dex": 495 },
         { "id": "servine", "name": "Servine", "dex": 496 },
         { "id": "serperior", "name": "Serperior", "dex": 497 },
@@ -603,7 +604,6 @@ window.POKEMON_DATA = {
         { "id": "oshawott", "name": "Oshawott", "dex": 501 },
         { "id": "dewott", "name": "Dewott", "dex": 502 },
         { "id": "samurott", "name": "Samurott", "dex": 503 },
-        { "id": "victini", "name": "Victini", "dex": 494 },
         { "id": "patrat", "name": "Patrat", "dex": 504 },
         { "id": "watchog", "name": "Watchog", "dex": 505 },
         { "id": "lillipup", "name": "Lillipup", "dex": 506 },
@@ -1235,188 +1235,41 @@ window.POKEMON_DATA = {
         { "id": "terapagos", "name": "Terapagos", "dex": 1024 },
         { "id": "pecharunt", "name": "Pecharunt", "dex": 1025 }
       ]
-    },
+    }
+  ],
+  "formPages": [
     {
-      "id": "forms-13",
-      "title": "Unown Forms",
+      "region": "Sinnoh",
+      "type": "Forms",
       "pokemon": [
-        { "id": "unown-a", "name": "Unown A", "imageId": "unown-a" },
-        { "id": "unown-b", "name": "Unown B", "imageId": "unown-b" },
-        { "id": "unown-c", "name": "Unown C", "imageId": "unown-c" },
-        { "id": "unown-d", "name": "Unown D", "imageId": "unown-d" },
-        { "id": "unown-e", "name": "Unown E", "imageId": "unown-e" },
-        { "id": "unown-f", "name": "Unown F", "imageId": "unown-f" },
-        { "id": "unown-g", "name": "Unown G", "imageId": "unown-g" },
-        { "id": "unown-h", "name": "Unown H", "imageId": "unown-h" },
-        { "id": "unown-i", "name": "Unown I", "imageId": "unown-i" },
-        { "id": "unown-j", "name": "Unown J", "imageId": "unown-j" },
-        { "id": "unown-k", "name": "Unown K", "imageId": "unown-k" },
-        { "id": "unown-l", "name": "Unown L", "imageId": "unown-l" },
-        { "id": "unown-m", "name": "Unown M", "imageId": "unown-m" },
-        { "id": "unown-n", "name": "Unown N", "imageId": "unown-n" },
-        { "id": "unown-o", "name": "Unown O", "imageId": "unown-o" },
-        { "id": "unown-p", "name": "Unown P", "imageId": "unown-p" },
-        { "id": "unown-q", "name": "Unown Q", "imageId": "unown-q" },
-        { "id": "unown-r", "name": "Unown R", "imageId": "unown-r" },
-        { "id": "unown-s", "name": "Unown S", "imageId": "unown-s" },
-        { "id": "unown-t", "name": "Unown T", "imageId": "unown-t" },
-        { "id": "unown-u", "name": "Unown U", "imageId": "unown-u" },
-        { "id": "unown-v", "name": "Unown V", "imageId": "unown-v" },
-        { "id": "unown-w", "name": "Unown W", "imageId": "unown-w" },
-        { "id": "unown-x", "name": "Unown X", "imageId": "unown-x" },
-        { "id": "unown-y", "name": "Unown Y", "imageId": "unown-y" },
-        { "id": "unown-z", "name": "Unown Z", "imageId": "unown-z" },
-        { "id": "unown-exclamation", "name": "Unown !", "imageId": "unown-exclamation" },
-        { "id": "unown-question", "name": "Unown ?", "imageId": "unown-question" }
-      ]
-    },
-    {
-      "id": "forms-3",
-      "title": "Hoenn Forms",
-      "pokemon": [
-        { "id": "deoxys-normal", "name": "Deoxys Normal", "imageId": "deoxys-normal" },
-        { "id": "deoxys-attack", "name": "Deoxys Attack", "imageId": "deoxys-attack" },
-        { "id": "deoxys-defense", "name": "Deoxys Defense", "imageId": "deoxys-defense" },
-        { "id": "deoxys-speed", "name": "Deoxys Speed", "imageId": "deoxys-speed" }
-      ]
-    },
-    {
-      "id": "forms-4",
-      "title": "Sinnoh Forms",
-      "pokemon": [
-        { "id": "burmy", "name": "Burmy Plant", "imageId": "burmy" },
-        { "id": "burmy-sandy", "name": "Burmy Sandy", "imageId": "burmy-sandy" },
-        { "id": "burmy-trash", "name": "Burmy Trash", "imageId": "burmy-trash" },
-        { "id": "wormadam-plant", "name": "Wormadam Plant", "imageId": "wormadam-plant" },
-        { "id": "wormadam-sandy", "name": "Wormadam Sandy", "imageId": "wormadam-sandy" },
-        { "id": "wormadam-trash", "name": "Wormadam Trash", "imageId": "wormadam-trash" },
-        { "id": "shellos-west", "name": "Shellos West", "imageId": "shellos-west" },
-        { "id": "shellos-east", "name": "Shellos East", "imageId": "shellos-east" },
-        { "id": "gastrodon-west", "name": "Gastrodon West", "imageId": "gastrodon-west" },
-        { "id": "gastrodon-east", "name": "Gastrodon East", "imageId": "gastrodon-east" },
-        { "id": "hippopotas-male", "name": "Hippopotas Male", "imageId": "hippopotas" },
-        { "id": "hippopotas-female", "name": "Hippopotas Female", "imageId": "hippopotas-female" },
-        { "id": "hippowdon-male", "name": "Hippowdon Male", "imageId": "hippowdon" },
-        { "id": "hippowdon-female", "name": "Hippowdon Female", "imageId": "hippowdon-female" },
-        { "id": "rotom", "name": "Rotom", "imageId": "rotom" },
         { "id": "rotom-heat", "name": "Heat Rotom", "imageId": "rotom-heat" },
         { "id": "rotom-wash", "name": "Wash Rotom", "imageId": "rotom-wash" },
         { "id": "rotom-frost", "name": "Frost Rotom", "imageId": "rotom-frost" },
         { "id": "rotom-fan", "name": "Fan Rotom", "imageId": "rotom-fan" },
         { "id": "rotom-mow", "name": "Mow Rotom", "imageId": "rotom-mow" },
-        { "id": "shaymin-land", "name": "Shaymin Land", "imageId": "shaymin-land" },
         { "id": "shaymin-sky", "name": "Shaymin Sky", "imageId": "shaymin-sky" }
       ]
     },
     {
-      "id": "forms-5",
-      "title": "Unova Forms",
+      "region": "Unova",
+      "type": "Forms",
       "pokemon": [
-        { "id": "unfezant-male", "name": "Unfezant Male", "imageId": "unfezant" },
-        { "id": "unfezant-female", "name": "Unfezant Female", "imageId": "unfezant-female" },
-        { "id": "basculin-red-striped", "name": "Basculin Red", "imageId": "basculin-red-striped" },
-        { "id": "basculin-blue-striped", "name": "Basculin Blue", "imageId": "basculin-blue-striped" },
-        { "id": "deerling-spring", "name": "Deerling Spring", "imageId": "deerling-spring" },
-        { "id": "deerling-summer", "name": "Deerling Summer", "imageId": "deerling-summer" },
-        { "id": "deerling-autumn", "name": "Deerling Autumn", "imageId": "deerling-autumn" },
-        { "id": "deerling-winter", "name": "Deerling Winter", "imageId": "deerling-winter" },
-        { "id": "sawsbuck-spring", "name": "Sawsbuck Spring", "imageId": "sawsbuck-spring" },
-        { "id": "sawsbuck-summer", "name": "Sawsbuck Summer", "imageId": "sawsbuck-summer" },
-        { "id": "sawsbuck-autumn", "name": "Sawsbuck Autumn", "imageId": "sawsbuck-autumn" },
-        { "id": "sawsbuck-winter", "name": "Sawsbuck Winter", "imageId": "sawsbuck-winter" },
-        { "id": "frillish-male", "name": "Frillish Male", "imageId": "frillish-male" },
-        { "id": "frillish-female", "name": "Frillish Female", "imageId": "frillish-female" },
-        { "id": "jellicent-male", "name": "Jellicent Male", "imageId": "jellicent-male" },
-        { "id": "jellicent-female", "name": "Jellicent Female", "imageId": "jellicent-female" },
-        { "id": "tornadus-incarnate", "name": "Tornadus Incarnate", "imageId": "tornadus-incarnate" },
         { "id": "tornadus-therian", "name": "Tornadus Therian", "imageId": "tornadus-therian" },
-        { "id": "thundurus-incarnate", "name": "Thundurus Incarnate", "imageId": "thundurus-incarnate" },
         { "id": "thundurus-therian", "name": "Thundurus Therian", "imageId": "thundurus-therian" },
-        { "id": "landorus-incarnate", "name": "Landorus Incarnate", "imageId": "landorus-incarnate" },
         { "id": "landorus-therian", "name": "Landorus Therian", "imageId": "landorus-therian" },
-        { "id": "keldeo-ordinary", "name": "Keldeo Ordinary", "imageId": "keldeo-ordinary" },
         { "id": "keldeo-resolute", "name": "Keldeo Resolute", "imageId": "keldeo-resolute" }
       ]
     },
     {
-      "id": "forms-6",
-      "title": "Kalos Forms",
+      "region": "Kalos",
+      "type": "Forms",
       "pokemon": [
-        { "id": "pyroar-male", "name": "Pyroar Male", "imageId": "pyroar-male" },
-        { "id": "pyroar-female", "name": "Pyroar Female", "imageId": "pyroar-female" },
-        { "id": "flabebe-red", "name": "Flabébé Red", "imageId": "flabebe-red" },
-        { "id": "flabebe-orange", "name": "Flabébé Orange", "imageId": "flabebe-orange" },
-        { "id": "flabebe-yellow", "name": "Flabébé Yellow", "imageId": "flabebe-yellow" },
-        { "id": "flabebe-white", "name": "Flabébé White", "imageId": "flabebe-white" },
-        { "id": "flabebe-blue", "name": "Flabébé Blue", "imageId": "flabebe-blue" },
-        { "id": "floette-red", "name": "Floette Red", "imageId": "floette-red" },
-        { "id": "floette-orange", "name": "Floette Orange", "imageId": "floette-orange" },
-        { "id": "floette-yellow", "name": "Floette Yellow", "imageId": "floette-yellow" },
-        { "id": "floette-white", "name": "Floette White", "imageId": "floette-white" },
-        { "id": "floette-blue", "name": "Floette Blue", "imageId": "floette-blue" },
-        { "id": "floette-eternal", "name": "Floette Eternal Flower", "imageId": "floette-eternal" },
-        { "id": "florges-red", "name": "Florges Red", "imageId": "florges-red" },
-        { "id": "florges-orange", "name": "Florges Orange", "imageId": "florges-orange" },
-        { "id": "florges-yellow", "name": "Florges Yellow", "imageId": "florges-yellow" },
-        { "id": "florges-white", "name": "Florges White", "imageId": "florges-white" },
-        { "id": "florges-blue", "name": "Florges Blue", "imageId": "florges-blue" },
-        { "id": "furfrou-natural", "name": "Furfrou Natural", "imageId": "furfrou-natural" },
-        { "id": "furfrou-heart", "name": "Furfrou Heart", "imageId": "furfrou-heart" },
-        { "id": "furfrou-star", "name": "Furfrou Star", "imageId": "furfrou-star" },
-        { "id": "furfrou-diamond", "name": "Furfrou Diamond", "imageId": "furfrou-diamond" },
-        { "id": "furfrou-debutante", "name": "Furfrou Debutante", "imageId": "furfrou-debutante" },
-        { "id": "furfrou-matron", "name": "Furfrou Matron", "imageId": "furfrou-matron" },
-        { "id": "furfrou-dandy", "name": "Furfrou Dandy", "imageId": "furfrou-dandy" },
-        { "id": "furfrou-la-reine", "name": "Furfrou La Reine", "imageId": "furfrou-la-reine" },
-        { "id": "furfrou-kabuki", "name": "Furfrou Kabuki", "imageId": "furfrou-kabuki" },
-        { "id": "furfrou-pharaoh", "name": "Furfrou Pharaoh", "imageId": "furfrou-pharaoh" },
-        { "id": "meowstic-male", "name": "Meowstic Male", "imageId": "meowstic-male" },
-        { "id": "meowstic-female", "name": "Meowstic Female", "imageId": "meowstic-female" }
+        { "id": "floette-eternal", "name": "Floette Eternal Flower", "imageId": "floette-eternal" }
       ]
     },
     {
-      "id": "forms-11",
-      "title": "Kalos Forms II",
-      "pokemon": [
-        { "id": "pumpkaboo-small", "name": "Pumpkaboo Small", "imageId": "pumpkaboo-small" },
-        { "id": "pumpkaboo-average", "name": "Pumpkaboo Average", "imageId": "pumpkaboo-average" },
-        { "id": "pumpkaboo-large", "name": "Pumpkaboo Large", "imageId": "pumpkaboo-large" },
-        { "id": "pumpkaboo-super", "name": "Pumpkaboo Super", "imageId": "pumpkaboo-super" },
-        { "id": "gourgeist-small", "name": "Gourgeist Small", "imageId": "gourgeist-small" },
-        { "id": "gourgeist-average", "name": "Gourgeist Average", "imageId": "gourgeist-average" },
-        { "id": "gourgeist-large", "name": "Gourgeist Large", "imageId": "gourgeist-large" },
-        { "id": "gourgeist-super", "name": "Gourgeist Super", "imageId": "gourgeist-super" }
-      ]
-    },
-    {
-      "id": "forms-14",
-      "title": "Vivillon Forms",
-      "pokemon": [
-        { "id": "vivillon-archipelago", "name": "Vivillon Archipelago", "imageId": "vivillon-archipelago" },
-        { "id": "vivillon-continental", "name": "Vivillon Continental", "imageId": "vivillon-continental" },
-        { "id": "vivillon-elegant", "name": "Vivillon Elegant", "imageId": "vivillon-elegant" },
-        { "id": "vivillon-fancy", "name": "Vivillon Fancy", "imageId": "vivillon-fancy" },
-        { "id": "vivillon-garden", "name": "Vivillon Garden", "imageId": "vivillon-garden" },
-        { "id": "vivillon-high-plains", "name": "Vivillon High Plains", "imageId": "vivillon-high-plains" },
-        { "id": "vivillon-icy-snow", "name": "Vivillon Icy Snow", "imageId": "vivillon-icy-snow" },
-        { "id": "vivillon-jungle", "name": "Vivillon Jungle", "imageId": "vivillon-jungle" },
-        { "id": "vivillon-marine", "name": "Vivillon Marine", "imageId": "vivillon-marine" },
-        { "id": "vivillon-meadow", "name": "Vivillon Meadow", "imageId": "vivillon-meadow" },
-        { "id": "vivillon-modern", "name": "Vivillon Modern", "imageId": "vivillon-modern" },
-        { "id": "vivillon-monsoon", "name": "Vivillon Monsoon", "imageId": "vivillon-monsoon" },
-        { "id": "vivillon-ocean", "name": "Vivillon Ocean", "imageId": "vivillon-ocean" },
-        { "id": "vivillon-poke-ball", "name": "Vivillon Poké Ball", "imageId": "vivillon-poke-ball" },
-        { "id": "vivillon-polar", "name": "Vivillon Polar", "imageId": "vivillon-polar" },
-        { "id": "vivillon-river", "name": "Vivillon River", "imageId": "vivillon-river" },
-        { "id": "vivillon-sandstorm", "name": "Vivillon Sandstorm", "imageId": "vivillon-sandstorm" },
-        { "id": "vivillon-savanna", "name": "Vivillon Savanna", "imageId": "vivillon-savanna" },
-        { "id": "vivillon-sun", "name": "Vivillon Sun", "imageId": "vivillon-sun" },
-        { "id": "vivillon-tundra", "name": "Vivillon Tundra", "imageId": "vivillon-tundra" }
-      ]
-    },
-    {
-      "id": "forms-7",
-      "title": "Alola Forms",
+      "region": "Alola",
+      "type": "Forms",
       "pokemon": [
         { "id": "rattata-alola", "name": "Alolan Rattata", "imageId": "rattata-alola" },
         { "id": "raticate-alola", "name": "Alolan Raticate", "imageId": "raticate-alola" },
@@ -1426,7 +1279,13 @@ window.POKEMON_DATA = {
         { "id": "vulpix-alola", "name": "Alolan Vulpix", "imageId": "vulpix-alola" },
         { "id": "ninetales-alola", "name": "Alolan Ninetales", "imageId": "ninetales-alola" },
         { "id": "diglett-alola", "name": "Alolan Diglett", "imageId": "diglett-alola" },
-        { "id": "dugtrio-alola", "name": "Alolan Dugtrio", "imageId": "dugtrio-alola" },
+        { "id": "dugtrio-alola", "name": "Alolan Dugtrio", "imageId": "dugtrio-alola" }
+      ]
+    },
+    {
+      "region": "Alola",
+      "type": "Forms",
+      "pokemon": [
         { "id": "meowth-alola", "name": "Alolan Meowth", "imageId": "meowth-alola" },
         { "id": "persian-alola", "name": "Alolan Persian", "imageId": "persian-alola" },
         { "id": "geodude-alola", "name": "Alolan Geodude", "imageId": "geodude-alola" },
@@ -1435,34 +1294,33 @@ window.POKEMON_DATA = {
         { "id": "grimer-alola", "name": "Alolan Grimer", "imageId": "grimer-alola" },
         { "id": "muk-alola", "name": "Alolan Muk", "imageId": "muk-alola" },
         { "id": "exeggutor-alola", "name": "Alolan Exeggutor", "imageId": "exeggutor-alola" },
-        { "id": "marowak-alola", "name": "Alolan Marowak", "imageId": "marowak-alola" },
-        { "id": "oricorio-baile", "name": "Oricorio Baile", "imageId": "oricorio-baile" },
+        { "id": "marowak-alola", "name": "Alolan Marowak", "imageId": "marowak-alola" }
+      ]
+    },
+    {
+      "region": "Alola",
+      "type": "Forms",
+      "pokemon": [
         { "id": "oricorio-pom-pom", "name": "Oricorio Pom-Pom", "imageId": "oricorio-pom-pom" },
         { "id": "oricorio-pau", "name": "Oricorio Pa’u", "imageId": "oricorio-pau" },
         { "id": "oricorio-sensu", "name": "Oricorio Sensu", "imageId": "oricorio-sensu" },
-        { "id": "lycanroc-midday", "name": "Lycanroc Midday", "imageId": "lycanroc-midday" },
         { "id": "lycanroc-midnight", "name": "Lycanroc Midnight", "imageId": "lycanroc-midnight" },
         { "id": "lycanroc-dusk", "name": "Lycanroc Dusk", "imageId": "lycanroc-dusk" },
-        { "id": "wishiwashi-solo", "name": "Wishiwashi Solo", "imageId": "wishiwashi-solo" },
         { "id": "wishiwashi-school", "name": "Wishiwashi School", "imageId": "wishiwashi-school" }
       ]
     },
     {
-      "id": "forms-12",
-      "title": "Alola Forms II",
+      "region": "Alola",
+      "type": "Forms",
       "pokemon": [
-        { "id": "minior-red", "name": "Minior Red Core", "imageId": "minior-red" },
-        { "id": "minior-orange", "name": "Minior Orange Core", "imageId": "minior-orange" },
-        { "id": "minior-yellow", "name": "Minior Yellow Core", "imageId": "minior-yellow" },
-        { "id": "minior-green", "name": "Minior Green Core", "imageId": "minior-green" },
-        { "id": "minior-blue", "name": "Minior Blue Core", "imageId": "minior-blue" },
-        { "id": "minior-indigo", "name": "Minior Indigo Core", "imageId": "minior-indigo" },
-        { "id": "minior-violet", "name": "Minior Violet Core", "imageId": "minior-violet" }
+        { "id": "necrozma-dusk", "name": "Dusk Mane Necrozma", "imageId": "necrozma-dusk" },
+        { "id": "necrozma-dawn", "name": "Dawn Wings Necrozma", "imageId": "necrozma-dawn" },
+        { "id": "necrozma-ultra", "name": "Ultra Necrozma", "imageId": "necrozma-ultra" }
       ]
     },
     {
-      "id": "forms-8",
-      "title": "Galar Forms",
+      "region": "Galar",
+      "type": "Forms",
       "pokemon": [
         { "id": "meowth-galar", "name": "Galarian Meowth", "imageId": "meowth-galar" },
         { "id": "ponyta-galar", "name": "Galarian Ponyta", "imageId": "ponyta-galar" },
@@ -1472,7 +1330,13 @@ window.POKEMON_DATA = {
         { "id": "farfetchd-galar", "name": "Galarian Farfetch’d", "imageId": "farfetchd-galar" },
         { "id": "weezing-galar", "name": "Galarian Weezing", "imageId": "weezing-galar" },
         { "id": "mr-mime-galar", "name": "Galarian Mr. Mime", "imageId": "mr-mime-galar" },
-        { "id": "articuno-galar", "name": "Galarian Articuno", "imageId": "articuno-galar" },
+        { "id": "articuno-galar", "name": "Galarian Articuno", "imageId": "articuno-galar" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Forms",
+      "pokemon": [
         { "id": "zapdos-galar", "name": "Galarian Zapdos", "imageId": "zapdos-galar" },
         { "id": "moltres-galar", "name": "Galarian Moltres", "imageId": "moltres-galar" },
         { "id": "slowking-galar", "name": "Galarian Slowking", "imageId": "slowking-galar" },
@@ -1481,23 +1345,22 @@ window.POKEMON_DATA = {
         { "id": "linoone-galar", "name": "Galarian Linoone", "imageId": "linoone-galar" },
         { "id": "darumaka-galar", "name": "Galarian Darumaka", "imageId": "darumaka-galar" },
         { "id": "darmanitan-galar-standard", "name": "Galarian Darmanitan", "imageId": "darmanitan-galar-standard" },
-        { "id": "yamask-galar", "name": "Galarian Yamask", "imageId": "yamask-galar" },
+        { "id": "yamask-galar", "name": "Galarian Yamask", "imageId": "yamask-galar" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Forms",
+      "pokemon": [
         { "id": "stunfisk-galar", "name": "Galarian Stunfisk", "imageId": "stunfisk-galar" },
         { "id": "toxtricity-amped", "name": "Toxtricity Amped", "imageId": "toxtricity-amped" },
         { "id": "toxtricity-low-key", "name": "Toxtricity Low Key", "imageId": "toxtricity-low-key" },
-        { "id": "sinistea", "name": "Sinistea Phony", "imageId": "sinistea" },
-        { "id": "sinistea-antique", "name": "Sinistea Antique", "imageId": "sinistea" },
-        { "id": "polteageist", "name": "Polteageist Phony", "imageId": "polteageist" },
-        { "id": "polteageist-antique", "name": "Polteageist Antique", "imageId": "polteageist" },
-        { "id": "indeedee-male", "name": "Indeedee Male", "imageId": "indeedee-male" },
-        { "id": "indeedee-female", "name": "Indeedee Female", "imageId": "indeedee-female" },
-        { "id": "urshifu-single-strike", "name": "Urshifu Single Strike", "imageId": "urshifu-single-strike" },
         { "id": "urshifu-rapid-strike", "name": "Urshifu Rapid Strike", "imageId": "urshifu-rapid-strike" }
       ]
     },
     {
-      "id": "forms-9",
-      "title": "Hisui Forms",
+      "region": "Hisui",
+      "type": "Forms",
       "pokemon": [
         { "id": "growlithe-hisui", "name": "Hisuian Growlithe", "imageId": "growlithe-hisui" },
         { "id": "arcanine-hisui", "name": "Hisuian Arcanine", "imageId": "arcanine-hisui" },
@@ -1506,25 +1369,36 @@ window.POKEMON_DATA = {
         { "id": "typhlosion-hisui", "name": "Hisuian Typhlosion", "imageId": "typhlosion-hisui" },
         { "id": "qwilfish-hisui", "name": "Hisuian Qwilfish", "imageId": "qwilfish-hisui" },
         { "id": "sneasel-hisui", "name": "Hisuian Sneasel", "imageId": "sneasel-hisui" },
+        { "id": "dialga-origin", "name": "Origin Dialga", "imageId": "dialga-origin" },
+        { "id": "palkia-origin", "name": "Origin Palkia", "imageId": "palkia-origin" }
+      ]
+    },
+    {
+      "region": "Hisui",
+      "type": "Forms",
+      "pokemon": [
         { "id": "samurott-hisui", "name": "Hisuian Samurott", "imageId": "samurott-hisui" },
         { "id": "lilligant-hisui", "name": "Hisuian Lilligant", "imageId": "lilligant-hisui" },
-        { "id": "basculin-white-striped", "name": "Basculin White", "imageId": "basculin-white-striped" },
         { "id": "zorua-hisui", "name": "Hisuian Zorua", "imageId": "zorua-hisui" },
         { "id": "zoroark-hisui", "name": "Hisuian Zoroark", "imageId": "zoroark-hisui" },
         { "id": "braviary-hisui", "name": "Hisuian Braviary", "imageId": "braviary-hisui" },
         { "id": "sliggoo-hisui", "name": "Hisuian Sliggoo", "imageId": "sliggoo-hisui" },
         { "id": "goodra-hisui", "name": "Hisuian Goodra", "imageId": "goodra-hisui" },
         { "id": "avalugg-hisui", "name": "Hisuian Avalugg", "imageId": "avalugg-hisui" },
-        { "id": "decidueye-hisui", "name": "Hisuian Decidueye", "imageId": "decidueye-hisui" },
-        { "id": "basculegion-male", "name": "Basculegion Male", "imageId": "basculegion-male" },
+        { "id": "decidueye-hisui", "name": "Hisuian Decidueye", "imageId": "decidueye-hisui" }
+      ]
+    },
+    {
+      "region": "Hisui",
+      "type": "Forms",
+      "pokemon": [
         { "id": "basculegion-female", "name": "Basculegion Female", "imageId": "basculegion-female" },
-        { "id": "enamorus-incarnate", "name": "Enamorus Incarnate", "imageId": "enamorus-incarnate" },
         { "id": "enamorus-therian", "name": "Enamorus Therian", "imageId": "enamorus-therian" }
       ]
     },
     {
-      "id": "forms-10",
-      "title": "Paldea Forms",
+      "region": "Paldea",
+      "type": "Forms",
       "pokemon": [
         { "id": "tauros-paldea-combat-breed", "name": "Paldean Tauros: Combat", "imageId": "tauros-paldea-combat-breed" },
         { "id": "tauros-paldea-blaze-breed", "name": "Paldean Tauros: Blaze", "imageId": "tauros-paldea-blaze-breed" },
@@ -1532,23 +1406,157 @@ window.POKEMON_DATA = {
         { "id": "wooper-paldea", "name": "Paldean Wooper", "imageId": "wooper-paldea" },
         { "id": "oinkologne-male", "name": "Oinkologne Male", "imageId": "oinkologne-male" },
         { "id": "oinkologne-female", "name": "Oinkologne Female", "imageId": "oinkologne-female" },
-        { "id": "maushold-family-of-four", "name": "Maushold Family of Four", "imageId": "maushold-family-of-four" },
-        { "id": "maushold-family-of-three", "name": "Maushold Family of Three", "imageId": "maushold-family-of-three" },
-        { "id": "squawkabilly-green-plumage", "name": "Squawkabilly Green", "imageId": "squawkabilly-green-plumage" },
-        { "id": "squawkabilly-blue-plumage", "name": "Squawkabilly Blue", "imageId": "squawkabilly-blue-plumage" },
-        { "id": "squawkabilly-yellow-plumage", "name": "Squawkabilly Yellow", "imageId": "squawkabilly-yellow-plumage" },
-        { "id": "squawkabilly-white-plumage", "name": "Squawkabilly White", "imageId": "squawkabilly-white-plumage" },
-        { "id": "tatsugiri-curly", "name": "Tatsugiri Curly", "imageId": "tatsugiri-curly" },
+        { "id": "palafin-hero", "name": "Palafin Hero", "imageId": "palafin-hero" },
         { "id": "tatsugiri-droopy", "name": "Tatsugiri Droopy", "imageId": "tatsugiri-droopy" },
-        { "id": "tatsugiri-stretchy", "name": "Tatsugiri Stretchy", "imageId": "tatsugiri-stretchy" },
-        { "id": "dudunsparce-two-segment", "name": "Dudunsparce Two Segment", "imageId": "dudunsparce-two-segment" },
-        { "id": "dudunsparce-three-segment", "name": "Dudunsparce Three Segment", "imageId": "dudunsparce-three-segment" },
-        { "id": "gimmighoul", "name": "Gimmighoul Chest", "imageId": "gimmighoul" },
-        { "id": "gimmighoul-roaming", "name": "Gimmighoul Roaming", "imageId": "gimmighoul-roaming" },
-        { "id": "poltchageist", "name": "Poltchageist Counterfeit", "imageId": "poltchageist" },
-        { "id": "poltchageist-artisan", "name": "Poltchageist Artisan", "imageId": "poltchageist" },
-        { "id": "sinistcha", "name": "Sinistcha Unremarkable", "imageId": "sinistcha" },
-        { "id": "sinistcha-masterpiece", "name": "Sinistcha Masterpiece", "imageId": "sinistcha" }
+        { "id": "tatsugiri-stretchy", "name": "Tatsugiri Stretchy", "imageId": "tatsugiri-stretchy" }
+      ]
+    },
+    {
+      "region": "Paldea",
+      "type": "Forms",
+      "pokemon": [
+        { "id": "gimmighoul-roaming", "name": "Gimmighoul Roaming", "imageId": "gimmighoul-roaming" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "venusaur-mega", "name": "Mega Venusaur", "imageId": "venusaur-mega" },
+        { "id": "charizard-mega-x", "name": "Mega Charizard X", "imageId": "charizard-mega-x" },
+        { "id": "charizard-mega-y", "name": "Mega Charizard Y", "imageId": "charizard-mega-y" },
+        { "id": "blastoise-mega", "name": "Mega Blastoise", "imageId": "blastoise-mega" },
+        { "id": "beedrill-mega", "name": "Mega Beedrill", "imageId": "beedrill-mega" },
+        { "id": "pidgeot-mega", "name": "Mega Pidgeot", "imageId": "pidgeot-mega" },
+        { "id": "alakazam-mega", "name": "Mega Alakazam", "imageId": "alakazam-mega" },
+        { "id": "slowbro-mega", "name": "Mega Slowbro", "imageId": "slowbro-mega" },
+        { "id": "gengar-mega", "name": "Mega Gengar", "imageId": "gengar-mega" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "kangaskhan-mega", "name": "Mega Kangaskhan", "imageId": "kangaskhan-mega" },
+        { "id": "pinsir-mega", "name": "Mega Pinsir", "imageId": "pinsir-mega" },
+        { "id": "gyarados-mega", "name": "Mega Gyarados", "imageId": "gyarados-mega" },
+        { "id": "aerodactyl-mega", "name": "Mega Aerodactyl", "imageId": "aerodactyl-mega" },
+        { "id": "mewtwo-mega-x", "name": "Mega Mewtwo X", "imageId": "mewtwo-mega-x" },
+        { "id": "mewtwo-mega-y", "name": "Mega Mewtwo Y", "imageId": "mewtwo-mega-y" },
+        { "id": "ampharos-mega", "name": "Mega Ampharos", "imageId": "ampharos-mega" },
+        { "id": "steelix-mega", "name": "Mega Steelix", "imageId": "steelix-mega" },
+        { "id": "scizor-mega", "name": "Mega Scizor", "imageId": "scizor-mega" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "heracross-mega", "name": "Mega Heracross", "imageId": "heracross-mega" },
+        { "id": "houndoom-mega", "name": "Mega Houndoom", "imageId": "houndoom-mega" },
+        { "id": "tyranitar-mega", "name": "Mega Tyranitar", "imageId": "tyranitar-mega" },
+        { "id": "sceptile-mega", "name": "Mega Sceptile", "imageId": "sceptile-mega" },
+        { "id": "blaziken-mega", "name": "Mega Blaziken", "imageId": "blaziken-mega" },
+        { "id": "swampert-mega", "name": "Mega Swampert", "imageId": "swampert-mega" },
+        { "id": "gardevoir-mega", "name": "Mega Gardevoir", "imageId": "gardevoir-mega" },
+        { "id": "sableye-mega", "name": "Mega Sableye", "imageId": "sableye-mega" },
+        { "id": "mawile-mega", "name": "Mega Mawile", "imageId": "mawile-mega" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "aggron-mega", "name": "Mega Aggron", "imageId": "aggron-mega" },
+        { "id": "medicham-mega", "name": "Mega Medicham", "imageId": "medicham-mega" },
+        { "id": "manectric-mega", "name": "Mega Manectric", "imageId": "manectric-mega" },
+        { "id": "sharpedo-mega", "name": "Mega Sharpedo", "imageId": "sharpedo-mega" },
+        { "id": "camerupt-mega", "name": "Mega Camerupt", "imageId": "camerupt-mega" },
+        { "id": "altaria-mega", "name": "Mega Altaria", "imageId": "altaria-mega" },
+        { "id": "banette-mega", "name": "Mega Banette", "imageId": "banette-mega" },
+        { "id": "absol-mega", "name": "Mega Absol", "imageId": "absol-mega" },
+        { "id": "glalie-mega", "name": "Mega Glalie", "imageId": "glalie-mega" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "salamence-mega", "name": "Mega Salamence", "imageId": "salamence-mega" },
+        { "id": "metagross-mega", "name": "Mega Metagross", "imageId": "metagross-mega" },
+        { "id": "latias-mega", "name": "Mega Latias", "imageId": "latias-mega" },
+        { "id": "latios-mega", "name": "Mega Latios", "imageId": "latios-mega" },
+        { "id": "rayquaza-mega", "name": "Mega Rayquaza", "imageId": "rayquaza-mega" },
+        { "id": "lopunny-mega", "name": "Mega Lopunny", "imageId": "lopunny-mega" },
+        { "id": "garchomp-mega", "name": "Mega Garchomp", "imageId": "garchomp-mega" },
+        { "id": "lucario-mega", "name": "Mega Lucario", "imageId": "lucario-mega" },
+        { "id": "abomasnow-mega", "name": "Mega Abomasnow", "imageId": "abomasnow-mega" }
+      ]
+    },
+    {
+      "region": "Kalos",
+      "type": "Mega",
+      "pokemon": [
+        { "id": "gallade-mega", "name": "Mega Gallade", "imageId": "gallade-mega" },
+        { "id": "audino-mega", "name": "Mega Audino", "imageId": "audino-mega" },
+        { "id": "greninja-mega", "name": "Mega Greninja", "imageId": "greninja-mega" },
+        { "id": "diancie-mega", "name": "Mega Diancie", "imageId": "diancie-mega" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Gmax",
+      "pokemon": [
+        { "id": "venusaur-gmax", "name": "Gigantamax Venusaur", "imageId": "venusaur-gmax" },
+        { "id": "charizard-gmax", "name": "Gigantamax Charizard", "imageId": "charizard-gmax" },
+        { "id": "blastoise-gmax", "name": "Gigantamax Blastoise", "imageId": "blastoise-gmax" },
+        { "id": "butterfree-gmax", "name": "Gigantamax Butterfree", "imageId": "butterfree-gmax" },
+        { "id": "pikachu-gmax", "name": "Gigantamax Pikachu", "imageId": "pikachu-gmax" },
+        { "id": "meowth-gmax", "name": "Gigantamax Meowth", "imageId": "meowth-gmax" },
+        { "id": "machamp-gmax", "name": "Gigantamax Machamp", "imageId": "machamp-gmax" },
+        { "id": "gengar-gmax", "name": "Gigantamax Gengar", "imageId": "gengar-gmax" },
+        { "id": "kingler-gmax", "name": "Gigantamax Kingler", "imageId": "kingler-gmax" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Gmax",
+      "pokemon": [
+        { "id": "lapras-gmax", "name": "Gigantamax Lapras", "imageId": "lapras-gmax" },
+        { "id": "eevee-gmax", "name": "Gigantamax Eevee", "imageId": "eevee-gmax" },
+        { "id": "snorlax-gmax", "name": "Gigantamax Snorlax", "imageId": "snorlax-gmax" },
+        { "id": "garbodor-gmax", "name": "Gigantamax Garbodor", "imageId": "garbodor-gmax" },
+        { "id": "melmetal-gmax", "name": "Gigantamax Melmetal", "imageId": "melmetal-gmax" },
+        { "id": "rillaboom-gmax", "name": "Gigantamax Rillaboom", "imageId": "rillaboom-gmax" },
+        { "id": "cinderace-gmax", "name": "Gigantamax Cinderace", "imageId": "cinderace-gmax" },
+        { "id": "inteleon-gmax", "name": "Gigantamax Inteleon", "imageId": "inteleon-gmax" },
+        { "id": "corviknight-gmax", "name": "Gigantamax Corviknight", "imageId": "corviknight-gmax" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Gmax",
+      "pokemon": [
+        { "id": "orbeetle-gmax", "name": "Gigantamax Orbeetle", "imageId": "orbeetle-gmax" },
+        { "id": "drednaw-gmax", "name": "Gigantamax Drednaw", "imageId": "drednaw-gmax" },
+        { "id": "coalossal-gmax", "name": "Gigantamax Coalossal", "imageId": "coalossal-gmax" },
+        { "id": "flapple-gmax", "name": "Gigantamax Flapple", "imageId": "flapple-gmax" },
+        { "id": "appletun-gmax", "name": "Gigantamax Appletun", "imageId": "appletun-gmax" },
+        { "id": "sandaconda-gmax", "name": "Gigantamax Sandaconda", "imageId": "sandaconda-gmax" },
+        { "id": "toxtricity-gmax", "name": "Gigantamax Toxtricity", "imageId": "toxtricity-gmax" },
+        { "id": "centiskorch-gmax", "name": "Gigantamax Centiskorch", "imageId": "centiskorch-gmax" },
+        { "id": "hatterene-gmax", "name": "Gigantamax Hatterene", "imageId": "hatterene-gmax" }
+      ]
+    },
+    {
+      "region": "Galar",
+      "type": "Gmax",
+      "pokemon": [
+        { "id": "grimmsnarl-gmax", "name": "Gigantamax Grimmsnarl", "imageId": "grimmsnarl-gmax" },
+        { "id": "alcremie-gmax", "name": "Gigantamax Alcremie", "imageId": "alcremie-gmax" },
+        { "id": "copperajah-gmax", "name": "Gigantamax Copperajah", "imageId": "copperajah-gmax" },
+        { "id": "duraludon-gmax", "name": "Gigantamax Duraludon", "imageId": "duraludon-gmax" },
+        { "id": "urshifu-gmax", "name": "Gigantamax Urshifu", "imageId": "urshifu-gmax" }
       ]
     }
   ],

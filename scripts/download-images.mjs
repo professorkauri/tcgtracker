@@ -6,7 +6,11 @@ import vm from 'node:vm';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = await (await import('node:fs/promises')).readFile(resolve(root, 'data/pokemon.js'), 'utf8');
 const sandbox = { window: {} }; vm.runInNewContext(source, sandbox);
-const pokemon = [...new Map(sandbox.window.POKEMON_DATA.boxes.flatMap(b => b.pokemon).map(p => [p.id, p])).values()];
+const data = sandbox.window.POKEMON_DATA;
+const downloadQueue = [...new Map([
+  ...data.boxes.flatMap(box => box.pokemon),
+  ...data.formPages.flatMap(page => page.pokemon)
+].map(pokemon => [pokemon.id, pokemon])).values()];
 await mkdir(resolve(root, 'images/regular'), { recursive: true });
 await mkdir(resolve(root, 'images/shiny'), { recursive: true });
 
@@ -19,27 +23,32 @@ function homeArtwork(api, mode) {
 function femaleHomeArtwork(api, mode) {
   return mode === 'shiny' ? api.sprites.other.home.front_shiny_female : api.sprites.other.home.front_female;
 }
+const specialIdAliases = {
+  'toxtricity-gmax': 'toxtricity-amped-gmax',
+  'urshifu-gmax': 'urshifu-single-strike-gmax'
+};
 async function imageUrls(id) {
+  const lookupId = specialIdAliases[id] || id;
   try {
-    const api = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const api = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${lookupId}`);
     return Object.fromEntries(['regular', 'shiny'].map(mode => [mode, homeArtwork(api, mode)]));
   } catch (pokemonError) {
-    if (id.endsWith('-female')) {
+    if (lookupId.endsWith('-female')) {
       try {
-        const api = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${id.replace(/-female$/, '')}`);
+        const api = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${lookupId.replace(/-female$/, '')}`);
         const urls = Object.fromEntries(['regular', 'shiny'].map(mode => [mode, femaleHomeArtwork(api, mode)]));
         if (urls.regular || urls.shiny) return urls;
       } catch {}
     }
     try {
-      const species = await fetchJson(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+      const species = await fetchJson(`https://pokeapi.co/api/v2/pokemon-species/${lookupId}`);
       const defaultId = species.varieties?.find(variety => variety.is_default)?.pokemon?.name;
-      if (!defaultId || defaultId === id) throw pokemonError;
+      if (!defaultId || defaultId === lookupId) throw pokemonError;
       const api = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${defaultId}`);
       return Object.fromEntries(['regular', 'shiny'].map(mode => [mode, homeArtwork(api, mode)]));
     } catch {
-      const form = await fetchJson(`https://pokeapi.co/api/v2/pokemon-form/${id}`);
-      if (id.endsWith('-female')) {
+      const form = await fetchJson(`https://pokeapi.co/api/v2/pokemon-form/${lookupId}`);
+      if (lookupId.endsWith('-female')) {
         const api = await fetchJson(form.pokemon.url);
         const urls = Object.fromEntries(['regular', 'shiny'].map(mode => [mode, femaleHomeArtwork(api, mode)]));
         if (urls.regular || urls.shiny) return urls;
@@ -54,7 +63,7 @@ async function imageUrls(id) {
 }
 
 let done = 0;
-for (const p of pokemon) {
+for (const p of downloadQueue) {
   try {
     const missingModes = [];
     for (const mode of ['regular', 'shiny']) {
@@ -68,7 +77,7 @@ for (const p of pokemon) {
         if (url) await download(url, target);
       }
     }
-    process.stdout.write(`\r${++done}/${pokemon.length} ${p.name.padEnd(28)}`);
+    process.stdout.write(`\r${++done}/${downloadQueue.length} ${p.name.padEnd(28)}`);
   } catch (error) { console.error(`\nSkipped ${p.id}: ${error.message}`); }
 }
 console.log('\nImages are ready. Re-run any time; existing files are skipped.');

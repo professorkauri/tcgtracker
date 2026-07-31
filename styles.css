@@ -56,6 +56,43 @@
   margin-right: 10px;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.progress-donut {
+  --progress: 0%;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  border-radius: 50%;
+  background: conic-gradient(var(--green) var(--progress), var(--progress-track) 0);
+  display: grid;
+  place-items: center;
+}
+.progress-donut::after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--card);
+}
+.progress-donut.complete {
+  background: var(--green);
+}
+.progress-donut.complete::after {
+  content: none;
+}
+.progress-donut svg {
+  width: 16px;
+  height: 16px;
+}
+.progress-donut path {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 * {
   box-sizing: border-box;
@@ -86,9 +123,9 @@ button {
 }
 .masthead {
   order: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -106,7 +143,7 @@ button {
   color: var(--green);
 }
 .collection-progress {
-  width: clamp(160px, 43vw, 310px);
+  width: 100%;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.86);
@@ -162,11 +199,13 @@ main {
 }
 .boxes {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 .region {
   display: grid;
   gap: 10px;
+  scroll-margin-top: 10px;
 }
 .region-body {
   background: transparent;
@@ -174,7 +213,7 @@ main {
 }
 .pages-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 .page {
@@ -190,6 +229,23 @@ main {
   letter-spacing: 0.08em;
   font-weight: 800;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.form-type {
+  position: absolute;
+  z-index: 2;
+  top: -3px;
+  left: -3px;
+  padding: 1px 6px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  outline: 2px solid #fff;
+  background: #e7efff;
+  color: var(--green);
+  font-size: 0.4rem;
+  white-space: nowrap;
 }
 .page-grid {
   display: grid;
@@ -219,6 +275,12 @@ main {
 .region-head[aria-expanded="true"] .chevron {
   transform: rotate(180deg);
 }
+.region-head[aria-disabled="true"] {
+  cursor: default;
+}
+.region-head[aria-disabled="true"] .chevron {
+  visibility: hidden;
+}
 .pokemon,
 .empty-slot {
   position: relative;
@@ -238,6 +300,28 @@ main {
     transform 0.12s,
     background 0.15s,
     opacity 0.15s;
+}
+.empty-slot {
+  color: #b8c5d6;
+  cursor: default;
+  opacity: 0.42;
+}
+.empty-slot svg {
+  width: 36%;
+  height: 36%;
+}
+.empty-slot circle,
+.empty-slot path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+.empty-slot .pokeball-fill {
+  fill: currentColor;
+  stroke: none;
+}
+.empty-slot .pokeball-cutout {
+  fill: #f2f6fb;
 }
 .pokemon:active {
   transform: scale(0.94);
@@ -442,20 +526,13 @@ main {
   }
 }
 @media (max-width: 520px) {
-  .masthead {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .collection-progress {
-    width: 100%;
-  }
   .pages-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (min-width: 700px) {
   .boxes {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: start;
   }
   .page-grid {
