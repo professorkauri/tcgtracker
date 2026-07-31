@@ -1,13 +1,13 @@
 :root {
   --ink: #17233b;
   --muted: #667085;
-  --paper: #edf3fa;
+  --paper: #f8f1f1;
   --card: #fff;
-  --line: #d7e1ed;
-  --red: #ef5350;
-  --green: #3568df;
+  --line: #eadada;
+  --red: #ee1515;
+  --accent: var(--red);
   --yellow: #f4c84a;
-  --progress-track: #dfe7f2;
+  --progress-track: #eadede;
   --navy: #152541;
   --shadow: 0 10px 28px rgba(36, 57, 91, 0.1);
 }
@@ -66,7 +66,7 @@
   height: 25px;
   flex: 0 0 25px;
   border-radius: 50%;
-  background: conic-gradient(var(--green) var(--progress), var(--progress-track) 0);
+  background: conic-gradient(var(--accent) var(--progress), var(--progress-track) 0);
   display: grid;
   place-items: center;
 }
@@ -78,7 +78,7 @@
   background: var(--card);
 }
 .progress-donut.complete {
-  background: var(--green);
+  background: var(--accent);
 }
 .progress-donut.complete::after {
   content: none;
@@ -112,7 +112,7 @@ body {
   min-height: 100vh;
   padding-bottom: 110px;
   background:
-    radial-gradient(circle at 100% 0, #d9e8ff 0, transparent 34%),
+    radial-gradient(circle at 100% 0, #ffdede 0, transparent 34%),
     radial-gradient(circle at 0 35%, #fff6d8 0, transparent 25%),
     var(--paper);
   display: flex;
@@ -140,7 +140,7 @@ button {
   white-space: nowrap;
 }
 .masthead h1 span {
-  color: var(--green);
+  color: var(--accent);
 }
 .collection-progress {
   width: 100%;
@@ -176,18 +176,18 @@ button {
   border: 0;
   border-radius: 999px;
   overflow: hidden;
-  background: #dfe7f2;
+  background: var(--progress-track);
 }
 .collection-progress progress::-webkit-progress-bar {
-  background: #dfe7f2;
+  background: var(--progress-track);
   border-radius: 999px;
 }
 .collection-progress progress::-webkit-progress-value {
-  background: var(--green);
+  background: var(--accent);
   border-radius: 999px;
 }
 .collection-progress progress::-moz-progress-bar {
-  background: var(--green);
+  background: var(--accent);
   border-radius: 999px;
 }
 main {
@@ -242,8 +242,8 @@ main {
   text-transform: uppercase;
   border-radius: 999px;
   outline: 2px solid #fff;
-  background: #e7efff;
-  color: var(--green);
+  background: #ffe5e5;
+  color: var(--accent);
   font-size: 0.4rem;
   white-space: nowrap;
 }
@@ -410,8 +410,8 @@ main {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #e2ebff;
-  color: var(--green);
+  background: #ffe3e3;
+  color: var(--accent);
   font-size: 1.7rem;
 }
 .empty h2 {
@@ -461,7 +461,7 @@ main {
   padding: 10px 12px;
 }
 .search-panel input:focus {
-  box-shadow: inset 0 0 0 2px var(--green);
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 .dock {
   position: fixed;
@@ -506,7 +506,7 @@ main {
   stroke-linejoin: round;
 }
 .dock button.active {
-  background: var(--green);
+  background: var(--accent);
   color: white;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
 }
